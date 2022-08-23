@@ -41,9 +41,11 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable("id") String id) {
-        Mono <Customer> p = iCustomerService.listPorId(id);
-        //iCustomerService.delete(p);
+    public ResponseEntity<Void> deleteCustomer(@PathVariable("id") String idPrueba) {
+        logger.info("{} {}", "DeleteMapping =>" , idPrueba);
+        Mono <Customer> p = iCustomerService.listPorId(idPrueba);
+
+        iCustomerService.deleteById(idPrueba);
         return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
     }
 }
