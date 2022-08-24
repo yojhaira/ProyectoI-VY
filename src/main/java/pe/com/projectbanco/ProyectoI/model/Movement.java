@@ -17,7 +17,6 @@ import javax.validation.Valid;
 public class Movement {
     @Id
     private String id;
-    @Valid
     private Customer customer;
     @JsonIgnore
     public Customer getCustomer() {
