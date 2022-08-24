@@ -1,5 +1,6 @@
 package pe.com.projectbanco.ProyectoI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,4 +19,8 @@ public class Personal {
     private String lastName;
     private String dni;
     private Customer customer;
+ @JsonIgnore
+ public Customer getCustomer() {
+  return customer;
+ }
 }

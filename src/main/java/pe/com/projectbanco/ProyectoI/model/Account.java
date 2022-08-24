@@ -1,5 +1,6 @@
 package pe.com.projectbanco.ProyectoI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,15 @@ import java.util.Date;
 
 public class Account {
     private Integer idAccount;
-    private Integer idCustomer;
-    private Integer idProduct;
+    private Customer idCustomer;
+    @JsonIgnore
+    public Customer getCustomer() {
+        return idCustomer;
+    }
+    private Product idProduct;
+    @JsonIgnore
+    public Product getProduct () { return idProduct;
+    }
     private Date dateOpen;
     private double amount;
 }

@@ -1,5 +1,6 @@
 package pe.com.projectbanco.ProyectoI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,4 +20,9 @@ public class Business {
     private String legalRepresentative;
     private Integer nroLegalRepresentative;
     private Customer customer;
+    @JsonIgnore
+    public Customer getCustomer() {
+        return customer;
+    }
+
 }
